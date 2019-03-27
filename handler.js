@@ -7,7 +7,7 @@ module.exports.daveyFirst = async event => {
   const url = `https://trefle.io/api/plants?token=${process.env.TREFLEKEY}&q=${
     event.queryStringParameters.name
   }`;
-
+  console.log({ url });
   const result = await axios.get(url);
   const text = result.data.map(item => item.common_name).filter(x => x);
 

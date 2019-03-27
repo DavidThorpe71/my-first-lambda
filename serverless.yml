@@ -15,7 +15,7 @@ service: davey-serverless-test # NOTE: update this with your service name
 
 plugins:
   - serverless-offline
-  - axios
+  - serverless-dotenv-plugin
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
@@ -93,7 +93,7 @@ functions:
 
     #    Define function environment variables here
     environment:
-      TREFLEKEY: ZDcvb25obEdwRDZSN1QyeXhPUHd6Zz09
+      TREFLEKEY: ${env:TREFLEKEY}
 # you can add CloudFormation resource templates here
 #resources:
 #  Resources:
